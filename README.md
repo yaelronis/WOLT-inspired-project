@@ -1,4 +1,5 @@
 # BIU Systems – Recommendations
+Developed as a team project at Bar-Ilan University as part of our Computer Science studies.
 
 A Wolt style food delivery system in two parts:
 
