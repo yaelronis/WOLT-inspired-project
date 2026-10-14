@@ -1,0 +1,12 @@
+/* Styles used only on the registration page (location field icon). */
+.input-location-icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  background: url(../icons/location.png) center / contain no-repeat;
+  pointer-events: none;
+}
+.input-location-icon img { display: none; }

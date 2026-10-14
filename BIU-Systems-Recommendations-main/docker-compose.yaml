@@ -1,0 +1,54 @@
+name: biurec
+services:
+  backend:
+    image: biurec-backend
+    entrypoint: ./build/main 8080
+    ports:
+      - "8080:8080"
+    build:
+      dockerfile: dockerfile.backend
+    volumes:
+      - data:/usr/src/app/data
+  test:
+    image: biurec-backend
+    entrypoint: ./build/test
+  pyclient:
+    image: biurec-pyclient
+    build:
+      dockerfile: dockerfile.pyclient
+  mongo:
+    image: mongo:7
+    volumes: 
+      - mongo-data:/data/db
+  api:
+    image: biurec-api
+    build:
+      dockerfile: dockerfile.api
+    # app.js takes {backend_host} {backend_port}: reach the C++ backend ("backend")
+    # on its port. Adjust the port if your backend listens on something else.
+    command: ["backend", "8080"]
+    ports:
+      - "3000:3000"
+    environment:
+      # Real secret comes from the environment- never committed. Falls back to an
+      # insecure dev value only if JWT_SECRET is unset.
+      - JWT_SECRET=${JWT_SECRET:-dev-only-insecure-secret-change-me}
+      - MONGO_URI=mongodb://mongo:27017/biu
+    depends_on:
+      - backend
+      - mongo
+  mobile:
+    image: biurec-mobile
+    build:
+      dockerfile: dockerfile.mobile
+    ports:
+      - "8081:8081"
+    depends_on:
+      - api
+      - mongo
+
+volumes:
+  data:
+    name: "biurec-backend-data"
+  mongo-data:
+    name: "biurec-mongo-db"

@@ -1,0 +1,135 @@
+/* Container for restaurant cards list */
+.restaurants-list {
+  display: flex;
+  padding: 12px 12px;
+  gap: 10px
+}
+
+/* Main restaurant card layout */
+.restaurant-card {
+  width: 100%;
+  position: relative;
+  height: var(--restaurant-card-height);
+  border-radius: var(--restaurant-card-radius);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  cursor: pointer;
+  box-sizing: border-box;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.18);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+
+}
+
+/* Restaurant cover image */
+.restaurant-img {
+  width: 100%;
+  height: calc(var(--restaurant-card-height)/2);
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Lift card slightly when hovering */
+.restaurant-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+
+  cursor: pointer;
+}
+
+.restaurant-title-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.restaurant-name {
+  font-size: 18px;
+}
+
+.restaurant-address {
+  margin: 6px 0;
+  font-size: 16px
+}
+
+.restaurant-description {
+  color: var(--text-secondary);
+  margin: 0;
+  font-size: 15px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+
+.restaurant-content {
+  padding: 12px;
+}
+
+.restaurant-card-skeleton {
+  width: 100%;
+  height: var(--restaurant-card-height);
+  background-color: var(--bg);
+  border-radius: var(--restaurant-card-radius);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+}
+
+.skeleton-image {
+  width: 100%;
+  height: calc(var(--restaurant-card-height)/2);
+  background-color: var(--skeleton-bg);
+  animation: skeleton-pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes skeleton-pulse {
+  0% {
+    background-color: var(--card-pulse-2);
+  }
+
+  50% {
+    background-color: var(--card-pulse-2);
+  }
+
+  100% {
+    background-color: var(--card-pulse-1);
+  }
+}
+/* Owner only "delete restaurant" button */
+.restaurant-card-delete {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.restaurant-card-delete:hover {
+  background: #e23744;
+  transform: scale(1.08);
+}
+
+.restaurant-card-delete:disabled {
+  opacity: 0.6;
+  cursor: default;
+}

@@ -1,0 +1,7 @@
+FROM python:3.14-slim
+
+# copy client file
+COPY ./client/py/client.py /usr/src/app/
+WORKDIR /usr/src/app/
+
+ENTRYPOINT [ "python", "client.py" ]

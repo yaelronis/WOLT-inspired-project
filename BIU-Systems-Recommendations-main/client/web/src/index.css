@@ -1,0 +1,100 @@
+/* Global styles only- design tokens (variables) + reset/base elements.
+   Component-specific styles live in their own CSS files*/
+
+
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.5;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+a { color: inherit; text-decoration: none; }
+input { font-family: inherit; }
+:focus-visible { outline: 2px solid var(--auth-blue); outline-offset: 2px; }
+
+button:focus,
+button:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+[theme='light'] {
+    color-scheme: light;
+}
+
+[theme='dark'] {
+    color-scheme: dark;
+}
+
+:root {
+  /* sizes */
+  --restaurant-card-height: 260px;
+  --restaurant-card-radius: 16px;
+  --navigation-bar-height: 80px;
+  --radius-pill: 50px;
+  --radius-input: 12px;
+  --radius-sm: 8px;
+
+  /* colors */
+  /* color-scheme: light dark; */
+  color: var(--text);
+
+  --text: light-dark(black, white);
+  --text-primary: light-dark(#1a2b49, #b0b8c4);
+  --text-secondary: light-dark(#8a94a6, lightgray);
+  --text-placeholder: light-dark(#b0b8c4, #1a2b49);
+  --text-color: light-dark(white, black);
+  --view-all-color: #9C5A5A;
+  --search-bar-focus: #9C5A5A;
+  --view-all-color-text: #524A4E;
+
+  --bg: light-dark(white, #121614);
+  --skeleton-bg: light-dark(#e0e0e0, #3e0e62);
+  --profile-pic-section-bg: #f700000a;
+  --error: #d00000;
+  --error-bg: #fdecea;
+  --border: light-dark(#e0e0e0, #3b3035);
+  --border-input: #d0d0d0;
+  --log-out-btn: #c93a3a;
+  --menu-dropdown-background: white;
+
+  --button-pink-background: light-dark(#f4d4dc, #e37f98);
+  --button-pink-background-hover: #d2074052;
+
+  --search-background: #8c8c8c1c;
+  --search-background-active: light-dark(#ded9d4, #352b30);
+  --menu-hover: #f7f7f7;
+
+  --arrow-btn-color: black;
+  --auth-navy: light-dark(#1a2b49, #6c68e5);
+  --auth-blue: #009de0;
+  --auth-btn-hover: #b86a807d;
+  --auth-cyan-btn: light-dark(#FFD1DC, #c75b7a);
+  --auth-blue-light: #00b6ff2b;
+  --auth-blue-dark: #0077ab;
+
+  --restaurant-grid-empty--text: #666;
+
+  --cr-num-bg: #eceef1;
+  --cr-opt-bg: #f5f6f8;
+  --cr-thumb-bg: #f0f1f4;
+  --cr-addbtn-bg: #fafbfc;
+  --cr-addbtn-hover-bg: #5f5f5f35;
+  --cr-itemform-bg: #fafbfc;
+  --cr-ghost-hover-bg: #f3f4f6;
+
+  --card-pulse-1: #eaeeee;
+  --card-pulse-2: #d1d5d5;
+
+  --spinner-border-top: #524a4e;
+}

@@ -1,0 +1,107 @@
+.search-area {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    max-width: 600px;
+    z-index: 11;
+
+    display: flex;
+    justify-content: center;
+}
+
+/* Keeps search above the dark overlay when opened */
+.search-area.active {
+    z-index: 11;
+}
+
+/* Full screen background overlay while searching */
+.search-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(4px);
+    z-index: 10;
+}
+
+.search-box {
+    width: 100%;
+    max-width: 280px;
+    min-width: 0;
+    height: 48px;
+    border: 3px solid transparent;
+    border-radius: 28px;
+    background: var(--search-background);
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    transition:
+        max-width 0.35s ease,
+        border-color 1s ease;
+}
+
+
+/* Expanded search state */
+.search-area.active .search-box {
+    max-width: 600px;
+    width: 100%;
+    background: var(--search-background-active);
+}
+
+/* Highlight input when focused */
+
+.search-box:focus-within {
+    border-color: var(--search-bar-focus);
+}
+
+.search-box input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 18px;
+}
+
+.close-search {
+    margin-left: auto;
+    border: none;
+    background: transparent;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Search results dropdown */
+.search-results {
+    position: absolute;
+    box-sizing: border-box;
+    background-color: var(--bg);
+    width: min(600px, 90vw);
+    left: 50%;
+    transform: translateX(-50%);
+    top: calc(100% + 16px);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+/* Results grid */
+.search-results-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    overscroll-behavior: contain;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.search-results-list .restaurant-card {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+}

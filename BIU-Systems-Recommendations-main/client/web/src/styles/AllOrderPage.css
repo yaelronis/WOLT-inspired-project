@@ -1,0 +1,70 @@
+.all-orders-container {
+    padding: 40px 150px;
+}
+
+.orders-title {
+    font-size: 40px;
+}
+
+.orders-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.order-button {
+    width: 100%;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 8px;
+    padding: 0;
+    text-align: inherit;
+}
+
+.order-button:hover {
+    background-color: var(--border-input);
+}
+
+.order-item {
+    background: 0 0;
+    margin: 0;
+    padding: 0 20.8px;
+    transition: background .25s ease-out;
+    position: relative;
+}
+
+.order-data {
+    display: flex;
+    align-items: center;
+    /* width: 100%; */
+    padding: 20px;
+}
+ 
+ .order-name {
+    flex: 1;
+}
+
+.left{
+    display: flex;
+    flex:2;
+}
+
+.order-date {
+    flex: 1;
+}
+
+.order-price {
+    flex:1;
+    text-align: right;
+}
+
+.order-arrow {
+    font-size: 22px;
+    margin-left: 10px;
+} 
+/* "Cancelled" badge on a past order. */
+.order-cancelled-badge {
+  color: #e23744;
+  font-weight: 600;
+}

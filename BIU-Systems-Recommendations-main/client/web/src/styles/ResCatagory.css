@@ -1,0 +1,21 @@
+.category-section {
+    margin: 16px;
+    background-color: var(--bg);
+}
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.restaurants-list {
+    display: flex;
+    gap: 28px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+

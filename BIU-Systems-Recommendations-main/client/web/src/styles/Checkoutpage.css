@@ -1,0 +1,165 @@
+/* Styles for the CheckoutPage */
+
+.co-wrap {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 28px 24px 56px;
+}
+
+.co-back {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 700;
+  color: var(--auth-blue);
+  padding: 4px 0;
+  margin-bottom: 8px;
+}
+.co-back:hover { text-decoration: underline; }
+
+.co-title { margin: 0; font-size: 30px; font-weight: 800; color: var(--text-primary); }
+.co-restaurant { margin: 4px 0 22px; color: var(--text-secondary); font-weight: 600; }
+
+.co-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 18px;
+  align-items: start;
+}
+@media (max-width: 760px) {
+  .co-grid { grid-template-columns: 1fr; }
+}
+
+.co-card {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--bg);
+  padding: 18px 20px;
+  box-shadow: 0 1px 6px rgba(26, 43, 73, 0.06);
+}
+.co-card + .co-card { margin-top: 16px; }
+.co-card-title { margin: 0 0 14px; font-size: 18px; font-weight: 800; color: var(--text-primary); }
+
+.co-side { display: flex; flex-direction: column; }
+
+/* order items */
+.co-items { display: flex; flex-direction: column; }
+.co-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 1px solid var(--border);
+}
+.co-item:first-child { border-top: none; }
+.co-item-pic { width: 46px; height: 46px; border-radius: 10px; background: #f0f1f4 center / cover no-repeat; flex-shrink: 0; }
+.co-item-qty { font-weight: 800; color: var(--auth-blue-dark); min-width: 26px; }
+.co-item-name { flex: 1; font-weight: 600; color: var(--text-primary); }
+.co-item-price { font-weight: 700; color: var(--text-primary); }
+
+/* delivery */
+.co-deliver-to { margin: 0; font-weight: 700; color: var(--text-primary); }
+.co-coords { margin: 4px 0 0; color: var(--text-secondary); font-size: 14px; }
+.co-eta { margin: 8px 0 0; color: var(--text-secondary); font-size: 14px; }
+
+/* totals */
+.co-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+.co-total {
+  border-top: 1px solid var(--border);
+  margin-top: 6px;
+  padding-top: 12px;
+  color: var(--text-primary);
+  font-size: 18px;
+  font-weight: 800;
+}
+.co-error { color: var(--error); font-weight: 600; font-size: 14px; margin: 10px 0 0; }
+
+/* buttons */
+.co-primary {
+  border: none;
+  border-radius: var(--radius-pill);
+  background: var(--auth-cyan-btn);
+  color: var(--text);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 14px 22px;
+}
+.co-primary:hover:not(:disabled) { background: var(--auth-btn-hover); }
+.co-primary:disabled { opacity: 0.55; cursor: not-allowed; }
+.co-place { width: 100%; margin-top: 14px; height: 52px; }
+
+.co-secondary {
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-pill);
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 14px 22px;
+}
+.co-secondary:hover { background: #b2b4b921; }
+
+/* success + empty states */
+.co-success, .co-empty { text-align: center; padding-top: 60px; }
+.co-success h1, .co-empty h1 { margin: 8px 0; font-size: 30px; font-weight: 800; color: var(--text-primary); }
+.co-success p, .co-empty p { color: var(--text-secondary); margin: 4px 0; }
+.co-check {
+  width: 72px; height: 72px; margin: 0 auto 8px;
+  display: block;
+}
+.co-ordernum { font-weight: 800; color: var(--text-primary) !important; margin-top: 10px !important; }
+.co-success-actions { display: flex; gap: 12px; justify-content: center; margin-top: 22px; flex-wrap: wrap; }
+.co-empty .co-primary { margin-top: 18px; }
+
+/* the itemized order revealed by "View order" on the success screen */
+.co-placed { max-width: 460px; margin: 22px auto 0; text-align: left; }
+/* Order cancellation on the success screen. */
+.co-cancel-note {
+  margin: 4px 0 12px;
+  color: var(--text-secondary, #666);
+  font-size: 14px;
+}
+
+.co-cancel {
+  padding: 10px 18px;
+  border: 1px solid #e23744;
+  border-radius: 999px;
+  background: transparent;
+  color: #e23744;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+}
+
+.co-cancel:hover:not(:disabled) {
+  background: #e23744;
+  color: #fff;
+}
+
+.co-cancel:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.co-cancelled-msg {
+  margin-top: 12px;
+  color: #e23744;
+  font-weight: 600;
+}
+
+.co-cancel-expired {
+  margin-top: 10px;
+  color: var(--text-secondary, #888);
+  font-size: 14px;
+}

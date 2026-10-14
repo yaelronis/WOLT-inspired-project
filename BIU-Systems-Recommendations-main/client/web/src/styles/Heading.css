@@ -1,0 +1,12 @@
+/* Styles for the Heading component. */
+.auth-Heading {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--auth-navy);
+  margin-bottom: 28px;
+  letter-spacing: -0.3px;
+}
+
+@media (max-width: 520px) {
+  .auth-Heading { font-size: 20px; }
+}

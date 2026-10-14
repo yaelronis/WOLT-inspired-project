@@ -1,0 +1,31 @@
+
+.spinner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - var(--navigation-bar-height));
+    box-sizing: border-box;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(82, 74, 78, 0.15);
+    border-radius: 50%;
+    border-top: 4px solid var(--spinner-border-top);
+
+    animation: spin 1s linear infinite;
+}
+
+/*animation of spinner round*/
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

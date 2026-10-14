@@ -1,0 +1,9 @@
+/* Styles for the Card component. */
+.auth-Card {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}

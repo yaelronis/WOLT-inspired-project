@@ -1,0 +1,12 @@
+FROM gcc:latest
+
+# install cmake
+RUN apt-get update && apt-get install -y cmake
+
+# setup working directory
+COPY . /usr/src/app
+WORKDIR /usr/src/app
+
+# clean build project
+RUN rm -rf build
+RUN cmake -B build && cmake --build build

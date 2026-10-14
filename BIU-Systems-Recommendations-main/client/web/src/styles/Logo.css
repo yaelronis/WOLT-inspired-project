@@ -1,0 +1,16 @@
+/* Styles for the Logo component. */
+.auth-Logo-img,
+.auth-Logo-wrap img {
+  max-height: 80px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+img[src="/wolt-logo.png"] {
+  max-height: 80px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}

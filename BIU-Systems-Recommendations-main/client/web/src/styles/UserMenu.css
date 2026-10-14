@@ -1,0 +1,156 @@
+.user-menu {
+    position: relative;
+    background-color: var(--bg);
+}
+
+
+/* top avatar button */
+.user-avatar-btn {
+    border: none;
+    background: transparent;
+    border-radius: 999px;
+    border-width: 3px;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+
+.user-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-dropdown button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+}
+
+/* dropdown */
+.user-dropdown {
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: var(--bg);
+    width: 300px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 24px;
+    z-index: 100;
+
+    overflow: visible;
+}
+
+.user-dropdown::before {
+    content: "";
+    position: absolute;
+    background-color: var(--bg);
+    top: -10px;
+    right: 10%;
+
+    width: 20px;
+    height: 20px;
+
+    transform: rotate(45deg);
+
+    border-radius: 3px;
+    z-index: -1;
+
+}
+
+
+/* remove browser button style */
+.user-dropdown button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+
+/* profile item */
+.profile-preview {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 20px;
+}
+
+
+
+.menu-option:hover {
+    background: var(--menu-hover);
+}
+
+
+.profile-preview-img {
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+}
+
+
+.profile-info {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    text-align: left;
+}
+
+
+.profile-name {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.profile-details {
+    display: flex;
+    flex-direction: row;
+    margin-top: 4px;
+}
+
+
+.profile-subtitle {
+    flex: 1;
+    font-size: 16px;
+}
+
+.profile-address {
+    flex: 1;
+    color: var(--text-secondary);
+    font-size: 16px;
+    white-space: nowrap;
+    min-width: max-content;
+}
+
+
+.profile-arrow {
+    font-size: 30px;
+}
+
+
+/* normal menu rows */
+.menu-option {
+    width: 100%;
+
+    padding: 20px 28px;
+
+    text-align: left;
+
+    font-size: 18px;
+}
+
+
+.logout-btn {
+    color: var(--log-out-btn);
+}

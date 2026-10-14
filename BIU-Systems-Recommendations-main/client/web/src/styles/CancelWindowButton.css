@@ -1,0 +1,45 @@
+/* Floating "cancel your recent order" button. */
+.cancel-window-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 999px;
+  background: #e23744;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(226, 55, 68, 0.4);
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.cancel-window-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(226, 55, 68, 0.5);
+}
+
+.cancel-window-btn-icon {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.cancel-window-btn-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.15;
+}
+
+.cancel-window-btn-title {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.cancel-window-btn-sub {
+  font-size: 12px;
+  opacity: 0.9;
+}

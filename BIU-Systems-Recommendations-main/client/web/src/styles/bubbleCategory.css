@@ -1,0 +1,84 @@
+/* Main categories container */
+.categories-container {
+    margin: 16px;
+    background-color: var(--bg);
+}
+
+.categories-container::-webkit-scrollbar {
+    display: none;
+}
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.category-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.categories-list {
+    display: flex;
+    padding: 12px 12px;
+    gap: 20px
+}
+
+/* Single category card */
+.category-bubble-item {
+    display: flex;
+    width: 100%;
+    height: 160px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.18);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* Small lift animation on hover */
+.category-bubble-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+
+    cursor: pointer;
+}
+
+/* Reserve two lines so cards keep the same height */
+.category-bubble-name {
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.1;
+    min-height: calc(2 * 1.1em);
+}
+
+
+.bubble {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bubble img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Number of restaurants in category */
+.category-count {
+    color: var(--text-secondary);
+    font-size: 12px;
+}

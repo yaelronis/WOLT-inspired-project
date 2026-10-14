@@ -1,0 +1,402 @@
+/* Styles for the RestaurantPage */
+
+.rp { padding-bottom: 90px; }
+
+/* hero header */
+.rp-hero {
+  position: relative;
+  min-height: 230px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+.rp-hero-bg {
+  position: absolute;
+  inset: -30px;
+  background: var(--auth-navy) center / cover no-repeat;
+  filter: blur(16px) brightness(0.55);
+  transform: scale(1.12);
+  z-index: 0;
+}
+.rp-hero-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  gap: 18px;
+  padding: 26px 40px 22px;
+}
+.rp-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 18px;
+  flex-shrink: 0;
+  background: var(--auth-navy) center / cover no-repeat;
+  border: 3px solid var(--bg);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rp-avatar-initial { color: #fff; font-size: 40px; font-weight: 800; }
+.rp-head-text { color: #fff; min-width: 0; }
+.rp-title {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+.rp-subtitle { margin: 4px 0 0; font-weight: 600; opacity: 0.95; text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4); }
+.rp-info {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0.95;
+}
+.rp-info span { display: inline-flex; align-items: center; }
+.rp-info span:not(:first-child)::before { content: "\00B7"; margin-right: 8px; opacity: 0.7; }
+
+/* page container */
+.rp-wrap { width: 100%; box-sizing: border-box; padding: 24px 40px 48px; }
+.rp-state { text-align: center; color: var(--text-secondary); padding: 60px 0; font-weight: 600; }
+
+.rp-toast {
+  background: var(--auth-blue-light);
+  color: var(--auth-blue-dark);
+  border: 1px solid var(--auth-blue);
+  border-radius: var(--radius-input);
+  padding: 12px 16px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+/* sections */
+.rp-section { margin-bottom: 34px; }
+.rp-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.rp-section-head h2 { margin: 0; font-size: 22px; font-weight: 800; color: var(--text-primary); }
+.rp-empty { color: var(--text-secondary); font-weight: 500; margin: 4px 0 0; }
+.rp-link {
+  border: none; background: none; padding: 4px 2px;
+  font-family: inherit; font-weight: 700; font-size: 14px;
+  color: var(--auth-blue); cursor: pointer;
+}
+.rp-link:hover { text-decoration: underline; }
+
+/* product cards */
+.rp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 16px;
+}
+.rp-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--bg);
+  min-height: 116px;
+  box-shadow: 0 1px 6px rgba(26, 43, 73, 0.06);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.rp-card:hover { box-shadow: 0 6px 18px rgba(26, 43, 73, 0.12); transform: translateY(-1px); }
+.rp-card-body { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.rp-card-name { margin: 0 0 6px; font-size: 16px; font-weight: 700; color: var(--text-primary); }
+.rp-card-price { margin-top: auto; font-weight: 800; color: var(--text-primary); }
+.rp-card-pic {
+  position: relative;
+  width: 104px;
+  height: 104px;
+  flex-shrink: 0;
+  align-self: center;
+  border-radius: 12px;
+  background: #f0f1f4 center / cover no-repeat;
+}
+
+/* +/x action button on the image corner */
+.rp-add, .rp-del {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(26, 43, 73, 0.22);
+}
+.rp-add { background: var(--auth-blue-light); color: var(--auth-blue-dark); }
+.rp-add:hover { background: var(--auth-blue); color: #fff; }
+.rp-del { background: #fff; color: var(--error); }
+.rp-del:hover { background: var(--error); color: #fff; }
+
+/* owner add product form */
+.rp-addform {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-input);
+  padding: 16px;
+  margin-bottom: 14px;
+  background: var(--bg);
+}
+.rp-addform-row { display: flex; gap: 12px; }
+.rp-fieldgroup { flex: 1; display: flex; flex-direction: column; }
+.rp-input {
+  width: 100%;
+  border: 1.5px solid var(--border-input);
+  border-radius: var(--radius-input);
+  padding: 11px 13px;
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--text-primary);
+  background: var(--bg);
+  outline: none;
+}
+.rp-input:focus { border-color: var(--auth-blue); }
+.rp-price { position: relative; }
+.rp-price .rp-price-input { padding-left: 28px; }
+.rp-cur { position: absolute; left: 11px; top: 11px; font-weight: 700; color: var(--text-secondary); }
+.rp-err { color: var(--error); font-size: 12.5px; font-weight: 600; margin: 5px 0 0; }
+.rp-photo-label {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--auth-blue);
+  cursor: pointer;
+}
+.rp-addform-actions { display: flex; gap: 10px; margin-top: 14px; }
+.rp-ghost, .rp-save {
+  flex: 1; height: 44px; border-radius: var(--radius-pill);
+  font-family: inherit; font-weight: 700; cursor: pointer;
+}
+.rp-ghost { border: 1.5px solid var(--border); background: var(--bg); color: var(--text-primary); }
+.rp-ghost:hover:not(:disabled) { background: var(--cr-addbtn-hover-bg); }
+.rp-save { border: none; background: var(--auth-cyan-btn); color: var(--text-primary); }
+.rp-save:hover:not(:disabled) {
+  background: var(--cr-addbtn-hover-bg);
+}
+.rp-save:disabled, .rp-ghost:disabled { opacity: 0.55; cursor: not-allowed; }
+
+/* cart bottom bar */
+.rp-cartbar {
+  position: fixed;
+  top: 80px;
+  right: 24px;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 280px;
+  padding: 14px 20px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: var(--auth-cyan-btn);
+  color: var(--text);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(240, 184, 200, 0.55);
+}
+.rp-cartbar-badge {
+  background: #fff; color: #c25c78;
+  border-radius: 50%; width: 24px; height: 24px;
+  display: flex; align-items: center; justify-content: center; font-size: 13px;
+}
+.rp-cartbar-total { margin-left: auto; }
+
+/* order panel */
+.rp-overlay {
+  position: fixed; inset: 0; z-index: 2000;
+  background: rgba(26, 43, 73, 0.35);
+}
+.rp-panel {
+  position: fixed; top: 0; right: 0; bottom: 0; z-index: 2001;
+  width: min(420px, 100%);
+  background: var(--bg);
+  box-shadow: -8px 0 30px rgba(26, 43, 73, 0.18);
+  display: flex;
+  flex-direction: column;
+}
+.rp-panel-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 22px 14px;
+}
+.rp-panel-head h2 { margin: 0; font-size: 24px; font-weight: 800; color: var(--text-primary); }
+.rp-close {
+  border: none; background: var(--auth-cyan-btn); cursor: pointer;
+  width: 34px; height: 34px; border-radius: 50%;
+  font-size: 20px; color: var(--text-primary);
+}
+.rp-close:hover { background: var(--auth-btn-hover); }
+
+.rp-panel-items { flex: 1; overflow: auto; padding: 6px 22px; }
+.rp-line { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-top: 1px solid var(--border); }
+.rp-line:first-child { border-top: none; }
+.rp-line-pic { width: 52px; height: 52px; border-radius: 10px; background: #f0f1f4 center / cover no-repeat; flex-shrink: 0; }
+.rp-line-info { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.rp-line-name { font-weight: 700; color: var(--text-primary); }
+.rp-line-price { color: var(--text-secondary); font-weight: 600; font-size: 14px; }
+
+.rp-stepper {
+  display: inline-flex; align-items: center; gap: 12px;
+  border: 1.5px solid var(--border); border-radius: var(--radius-pill);
+  padding: 4px 10px;
+}
+.rp-stepper button {
+  border: none; background: none; cursor: pointer;
+  font-size: 18px; font-weight: 800; color: var(--auth-blue-dark);
+  width: 20px; line-height: 1;
+}
+.rp-stepper span { min-width: 14px; text-align: center; font-weight: 700; }
+
+.rp-panel-foot { padding: 16px 22px 22px; border-top: 1px solid var(--border); }
+.rp-subtotal {
+  display: flex; justify-content: space-between;
+  font-weight: 800; color: var(--text-primary); margin-bottom: 12px;
+}
+.rp-checkout {
+  width: 100%; height: 52px; border: none; border-radius: var(--radius-pill);
+  background: var(--auth-cyan-btn); color: var(--text);
+  font-family: inherit; font-size: 16px; font-weight: 700; cursor: pointer;
+}
+.rp-checkout:hover:not(:disabled) { background: var(--auth-btn-hover); }
+.rp-checkout:disabled { opacity: 0.55; cursor: not-allowed; }
+
+/* "Recommended for you" inside the order panel */
+.rp-reco { padding: 14px 22px 4px; border-top: 8px solid var(--bg); }
+.rp-reco-title { margin: 8px 0 12px; font-size: 17px; font-weight: 800; color: var(--text-primary); }
+.rp-reco-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.rp-reco-card { display: flex; flex-direction: column; }
+.rp-reco-pic {
+  position: relative;
+  height: 90px;
+  border-radius: var(--radius-input);
+  background: #f0f1f4 center / cover no-repeat;
+  margin-bottom: 6px;
+}
+.rp-reco-add {
+  position: absolute; right: 8px; bottom: 8px;
+  width: 30px; height: 30px; border-radius: 9px; border: none;
+  background: var(--auth-blue-light); color: var(--auth-blue-dark);
+  font-size: 18px; font-weight: 700; line-height: 1; cursor: pointer;
+  box-shadow: 0 2px 6px rgba(26, 43, 73, 0.18);
+}
+.rp-reco-add:hover { background: var(--auth-blue); color: #fff; }
+.rp-reco-name { font-weight: 700; font-size: 14px; color: var(--text-primary); }
+.rp-reco-price { color: var(--text-secondary); font-weight: 600; font-size: 13px; }
+
+/* dish card is clickable */
+.rp-card { cursor: pointer; }
+
+/* quantity stepper shown on a dish card when it's in the cart */
+.rp-card-stepper {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg);
+  border-radius: 10px;
+  padding: 4px 8px;
+  box-shadow: 0 2px 8px rgba(26, 43, 73, 0.22);
+}
+.rp-card-stepper button {
+  border: none; background: none; cursor: pointer;
+  font-size: 18px; font-weight: 800; color: var(--auth-blue-dark); line-height: 1; width: 18px;
+}
+.rp-card-stepper span { min-width: 12px; text-align: center; font-weight: 700; color: var(--text-primary); }
+
+/* product detail modal */
+.rp-modal {
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2001;
+  width: min(560px, calc(100% - 32px));
+  max-height: 88vh;
+  overflow: auto;
+  background: var(--bg);
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(26, 43, 73, 0.35);
+}
+.rp-modal-close {
+  position: absolute; top: 12px; right: 12px; z-index: 1;
+  width: 34px; height: 34px; border: none; border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92); color: var(--text-primary);
+  font-size: 20px; cursor: pointer; box-shadow: 0 2px 8px rgba(26, 43, 73, 0.2);
+}
+.rp-modal-pic { width: 100%; height: 240px; background: #f0f1f4 center / cover no-repeat; }
+.rp-modal-body { padding: 20px 24px 24px; }
+.rp-modal-name { margin: 0 0 8px; font-size: 24px; font-weight: 800; color: var(--text-primary); }
+.rp-modal-cat {
+  display: inline-block; font-size: 12px; font-weight: 700; color: var(--auth-blue-dark);
+  background: var(--auth-blue-light); border-radius: var(--radius-pill); padding: 3px 10px;
+}
+.rp-modal-desc { color: var(--text-secondary); margin: 12px 0 0; line-height: 1.5; }
+.rp-modal-price { margin: 14px 0 16px; font-size: 20px; font-weight: 800; color: var(--text-primary); }
+.rp-modal-add {
+  width: 100%; height: 50px; border: none; border-radius: var(--radius-pill);
+  background: var(--auth-cyan-btn); color: var(--text); font-family: inherit; font-size: 16px; font-weight: 700; cursor: pointer;
+}
+.rp-modal-add:hover { background: var(--auth-btn-hover); }
+.rp-modal-stepper {
+  display: inline-flex; align-items: center; gap: 18px;
+  border: 1.5px solid var(--border); border-radius: var(--radius-pill); padding: 8px 18px;
+}
+.rp-modal-stepper button { border: none; background: none; cursor: pointer; font-size: 22px; font-weight: 800; color: var(--auth-blue-dark); line-height: 1; }
+.rp-modal-stepper span { min-width: 18px; text-align: center; font-weight: 800; color: var(--text-primary); }
+
+/* "Often bought with" */
+.rp-often { margin-top: 24px; border-top: 1px solid var(--border); padding-top: 16px; }
+.rp-often-title { margin: 0 0 12px; font-size: 17px; font-weight: 800; color: var(--text-primary); }
+.rp-often-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.rp-often-card { cursor: pointer; }
+.rp-often-pic { position: relative; height: 100px; border-radius: 12px; background: #f0f1f4 center / cover no-repeat; margin-bottom: 6px; }
+.rp-often-add {
+  position: absolute; top: 7px; right: 7px;
+  width: 30px; height: 30px; border-radius: 9px; border: none;
+  background: var(--auth-blue-light); color: var(--auth-blue-dark);
+  font-size: 18px; font-weight: 700; line-height: 1; cursor: pointer;
+  box-shadow: 0 2px 6px rgba(26, 43, 73, 0.18);
+}
+.rp-often-add:hover { background: var(--auth-blue); color: #fff; }
+.rp-often-name { font-weight: 700; font-size: 14px; color: var(--text-primary); }
+.rp-often-price { color: var(--text-secondary); font-weight: 600; font-size: 13px; }
+/* Owner only "delete restaurant" button in the hero. */
+.rp-delete-restaurant {
+  margin-top: 12px;
+  padding: 8px 14px;
+  border: 1px solid rgba(226, 55, 68, 0.9);
+  border-radius: 999px;
+  background: rgba(226, 55, 68, 0.12);
+  color: #e23744;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.rp-delete-restaurant:hover {
+  background: #e23744;
+  color: #fff;
+}

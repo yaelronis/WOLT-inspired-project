@@ -1,0 +1,180 @@
+/* Styles for the OrderPage */
+
+.order-detail-container {
+    box-sizing: border-box;
+    padding: 50px 100px;
+}
+
+.back-to-orders-btn {
+    margin-bottom: 48px;
+    cursor: pointer;
+    display: inline-flex;
+    width: 180px;
+    height: 25px;
+}
+
+.arrow-history {
+    width: 24px;
+    height: 24px;
+}
+
+.order-basic-data-container {
+    margin-top: 16px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+    display: flex;
+}
+
+.upperpage{
+    display: flex;
+    flex-direction: row;
+}
+
+.order-basic-data {
+    flex-direction: column;
+    display: flex;
+}
+
+.order-res-name {
+    flex: 1;
+    margin: 0 0 12px;
+    display: flex;
+}
+
+.order-data-basic {
+    align-items: center;
+    display: flex;
+    color: var(--description-color);
+}
+
+.order-again-restaurant {
+    flex-direction: column;
+    gap: 16px;
+    display: flex;
+    margin-inline-start: auto;
+}
+
+.order-again-button {
+    background-color: var(--button-pink-background);
+    border-radius: 9999px;
+    padding: 5px;
+}
+
+.order-again-button:hover{
+    background-color: var(--button-pink-background-hover);
+}
+
+.restaurant-navigation-page{
+    padding: 5px;
+    background-color: var(--bottom-border-light-color);
+    border-radius: 999px;
+}
+
+
+.restaurant-navigation-page:hover{
+    background-color: var(--bottom-border-light-color-hover);
+}
+
+.items-order-container {
+    padding-top: 20px;
+    width: 100%;
+    margin-bottom: 60px;
+    box-sizing: border-box;
+}
+
+.items-text{
+    border-bottom: 1px solid var(--bottom-border-color);
+    width: 100%;
+    font-size: 20px;
+}
+
+.data-items {
+    font-size: 18px;
+    flex-direction: column;
+    display: flex;
+    padding: 16px 0px;
+    border-bottom: 1px solid var(--bottom-border-light-color);
+    width: 100%;
+}
+
+.products-mapping {
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    column-gap: 8px;
+    padding-top: 10px;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.product-name{
+    font-size: 16px;
+}
+
+.total-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.text-total-sum{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.totalsum{
+    font-weight: 700;
+    font-size: 24px;
+}
+
+
+/* Order cancellation controls on the order detail page. */
+.order-cancel-area {
+  margin-top: 14px;
+}
+
+.order-cancel-note {
+  margin: 0 0 8px;
+  color: var(--text-secondary, #666);
+  font-size: 14px;
+}
+
+.order-cancel-btn {
+  padding: 9px 18px;
+  border: 1px solid #e23744;
+  border-radius: 999px;
+  background: transparent;
+  color: #e23744;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+}
+
+.order-cancel-btn:hover:not(:disabled) {
+  background: #e23744;
+  color: #fff;
+}
+
+.order-cancel-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.order-cancel-expired {
+  margin-top: 8px;
+  color: var(--text-secondary, #888);
+  font-size: 13px;
+}
+
+.order-cancel-error {
+  margin-top: 8px;
+  color: #e23744;
+  font-size: 14px;
+}
+
+.order-cancelled-tag {
+  margin-top: 10px;
+  color: #e23744;
+  font-weight: 600;
+}

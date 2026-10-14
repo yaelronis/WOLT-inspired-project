@@ -1,0 +1,188 @@
+// @ts-check
+import { StyleSheet } from "react-native";
+
+/** @param {import("./colors.styles").Theme} colors */
+export default (colors) => StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: colors.background,
+    },
+    loadingContainer: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+    },
+    listContainer: {
+        paddingBottom: 30,
+    },
+    userInfoContainer: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "flex-start",
+        paddingHorizontal: 20,
+        paddingTop: 30,
+        paddingBottom: 20,
+        backgroundColor: colors.background,
+    },
+    textProfileInfo: {
+        flex: 1,
+        alignItems: "flex-start",
+        paddingLeft: 10,
+    },
+    displayUserName: {
+        fontSize: 24,
+        fontWeight: "700",
+        color: colors.text,
+        marginBottom: 16,
+    },
+    displayName: {
+        fontSize: 20,
+        fontWeight: "500",
+        color: colors.textSecondary,
+        marginBottom: 16,
+    },
+    infoLabel: {
+        fontSize: 14,
+        color: colors.textSecondary,
+        fontWeight: "500",
+        marginBottom: 2,
+    },
+    infoValue: {
+        fontSize: 15,
+        color: colors.text,
+        fontWeight: "400",
+        marginBottom: 12,
+    },
+    avatarWrapper: {
+        alignItems: "center",
+    },
+    avatar: {
+        width: 84,
+        height: 84,
+        borderRadius: 42,
+        backgroundColor: colors.primaryLight,
+    },
+    avatarPlaceholder: {
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: colors.primaryLight,
+    },
+    avatarPlaceholderText: {
+        fontSize: 24,
+        fontWeight: "bold",
+        color: colors.primary,
+    },
+
+    woltCard: {
+        backgroundColor: colors.background,
+        marginHorizontal: 16,
+        marginTop: 12,
+        padding: 16,
+        borderRadius: 16,
+        borderWidth: 1,
+        borderColor: colors.border,
+        shadowColor: "#000",
+        shadowOffset: { width: 0, height: 1 },
+        shadowOpacity: 0.04,
+        shadowRadius: 3,
+        elevation: 1,
+    },
+    rowBetween: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+    },
+    cardTitle: {
+        fontSize: 16,
+        fontWeight: "700",
+        color: colors.text,
+        textAlign: "left",
+    },
+    cardSubTitle: {
+        fontSize: 13,
+        color: colors.textSecondary,
+        marginTop: 4,
+        textAlign: "left",
+    },
+    locationBadge: {
+        alignSelf: "flex-start",
+        backgroundColor: colors.border,
+        paddingHorizontal: 10,
+        paddingVertical: 4,
+        borderRadius: 8,
+        fontSize: 12,
+        color: colors.text,
+        marginTop: 10,
+        fontWeight: "500",
+    },
+    sectionTitle: {
+        fontSize: 18,
+        fontWeight: "700",
+        color: colors.text,
+        marginHorizontal: 20,
+        marginTop: 24,
+        marginBottom: 10,
+        textAlign: "left",
+    },
+    orderCard: {
+        flexDirection: "row",
+        alignItems: "center",
+        backgroundColor: colors.background,
+        marginHorizontal: 16,
+        marginBottom: 10,
+        padding: 12,
+        borderRadius: 16,
+        borderWidth: 1,
+        borderColor: colors.border,
+    },
+    orderArrow: {
+        fontSize: 18,
+        color: colors.textSecondary,
+        fontWeight: "300",
+    },
+    emptyText: {
+        textAlign: "center",
+        color: colors.textSecondary,
+        marginTop: 20,
+    },
+    logoutButton: {
+        backgroundColor: colors.background,
+        borderWidth: 1,
+        borderColor: "#ff3b30",
+        marginHorizontal: 16,
+        marginTop: 30,
+        paddingVertical: 14,
+        borderRadius: 12,
+        alignItems: "center",
+    },
+    logoutButtonText: {
+        color: "#ff3b30",
+        fontSize: 15,
+        fontWeight: "700",
+    },
+    orderContent: {
+        flex: 1,
+        marginHorizontal: 12,
+    },
+    restaurantName: {
+        fontSize: 15,
+        fontWeight: "700",
+        color: colors.text,
+        textAlign: "left",
+    },
+    orderMetaRow: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        marginTop: 4,
+    },
+    orderMetaDate: {
+        fontSize: 13,
+        color: "#5f6368",
+    },
+    orderMetaPrice: {
+        fontSize: 13,
+        color: colors.text,
+        fontWeight: "600",
+    },
+});

@@ -1,0 +1,12 @@
+# vscode
+.vscode/
+.cache/
+
+# build artifacts
+/build
+/node_modules
+/client/web/build
+/client/web/node_modules
+
+# project data
+/data
